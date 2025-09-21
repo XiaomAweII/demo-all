@@ -1,0 +1,42 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: demo001
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  sql:
+    init:
+      schema-locations: classpath:db/init.sql
+      mode: always
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 1000MB
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*.xml
+
+logging:
+  level:
+    com:
+      maxiaowei: debug
+
+knife4j:
+  enable: true
+  openapi:
+    title: Knife4j官方文档
+    version: v4.0
+    license: Apache 2.0
+    license-url: https://stackoverflow.com/
+    terms-of-service-url: https://stackoverflow.com/
+    group:
+      test1:
+        group-name: 分组名称
+        api-rule: package
+        api-rule-resources:
+          - com.maxiaowei.demo001.controller
