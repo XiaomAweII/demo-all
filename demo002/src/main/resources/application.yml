@@ -1,0 +1,16 @@
+# tomcat 8
+#server:
+#  tomcat:
+#    max-connections: 10000 #最大连接数，默认为10000
+#    accept-count: 100 # 最大连接等待数，默认100
+#    max-threads: 200  #最大工作线程数，默认200
+#    min-spare-threads: 10 #最小工作线程数，默认10
+# tomcat 9，本案例中咱们使用的事tomcat9，所以用下面配置
+server:
+  tomcat:
+    max-connections: 8192
+    accept-count: 100
+    threads:
+      max: 200
+      min-spare: 20
+  port: 8080
